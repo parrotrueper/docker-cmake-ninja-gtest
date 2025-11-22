@@ -1,0 +1,35 @@
+{
+    "docker":{
+        "base_image":"ubuntu:24.04",
+        "pretty_name":"Ubuntu 24.04",
+        "build_name":"cmake-ninja-gtest:latest",
+        "data_path":"./src/docker-data",
+        "user":{
+            "name":"parrot",
+            "uid":"1000",
+            "gid":"1000"
+        }
+    },
+    "gtest":{
+        "release":"1.17.0",
+        "hash": "52eb810"
+    },
+    "gtest_parallel":{
+        "hash": "cd488bd"
+    },
+
+    "gcc":"13",
+
+    "python":"3.13",
+
+    "python_packages": {
+        "clang-format": "21.1.0",
+        "cmake": "4.1.0",
+        "cpplint": "2.0.2",
+        "flawfinder": "2.0.19",
+        "gcovr": "8.3",
+        "lizard": "1.17.31",
+        "numpy": "2.3.2",
+        "pytest": "8.4.2"
+    }
+}

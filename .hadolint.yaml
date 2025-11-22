@@ -1,0 +1,4 @@
+ignored:
+  - DL3008  # Pin versions in apt-get install
+  - DL4006  # Set SHELL option -o pipefail before RUN with pipe
+  - DL3003  # Use WORKDIR to switch to a directory instead of cd

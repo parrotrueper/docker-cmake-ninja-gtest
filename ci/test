@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Exit on error
+set -e
+set -u
+set -o pipefail
+
+# shellcheck source=/dev/null
+. ci/functions.sh
+# Error handling
+trap 'printf "\n\nERROR at $0 line $LINENO. Exiting.\n\n"' ERR
+
+header "Linting"
+run ./ci/run-shell-linter.sh
+run ./ci/run-dockerfile-linter.sh
+run ./ci/run-markdown-linter.sh
+
+# Build docker image
+header "Build Docker image"
+run ./build-image.sh
+
+# Get image tag from build-config.json
+IMAGE_TAG=$(jq -r '.docker.build_name' build-config.json)
+info "Using Docker image tag: ${IMAGE_TAG}"
+
+run docker run --rm -it -v "./":/workspace "${IMAGE_TAG}" /bin/bash ./ci/config-checks.sh
