@@ -17,7 +17,7 @@ projects using CMake, Ninja build system, and Google Test framework.
 ## Using the prebuilt image
 
 ```shell
-docker run --rm -it -v "./":/workspace parrotrueper/cmake-ninja-gtest:latest /bin/bash
+docker run --rm -it -v "./":/workspace parrotrueper/cmake-ninja-gtest:v1 /bin/bash
 ```
 
 ## Host Requirements
