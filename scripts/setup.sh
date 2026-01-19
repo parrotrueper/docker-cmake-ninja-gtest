@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Exit on error
-set -e
-set -u
-set -o pipefail
+set -euo pipefail
 
 # shellcheck source=/dev/null
 . ci/functions.sh

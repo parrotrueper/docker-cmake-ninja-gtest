@@ -14,6 +14,12 @@ projects using CMake, Ninja build system, and Google Test framework.
   - Various Python packages for linting and testing (e.g., clang-format,
     cpplint, flawfinder, pytest, numpy)
 
+## Using the prebuilt image
+
+```shell
+docker run --rm -it -v "./":/workspace parrotrueper/cmake-ninja-gtest:latest /bin/bash
+```
+
 ## Host Requirements
 
 - Docker Engine
